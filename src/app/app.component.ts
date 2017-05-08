@@ -1,10 +1,28 @@
 import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { SpotifyService } from "./spotify.service";
+import { Album } from "./spotify.model";
+
 
 @Component({
-  selector: 'app-root',
+  selector: 'ap-app',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  providers: [SpotifyService]
 })
 export class AppComponent {
-  title = 'app works!';
+  albums: Album[];
+  query: FormControl = new FormControl();
+
+  constructor(private spotiyService: SpotifyService) {
+    this.query.valueChanges
+      .debounceTime(400)
+      .distinctUntilChanged()
+      .subscribe(v => {
+        this.spotiyService.searchAlbums(v)
+          .subscribe(a => {
+            this.albums = a;
+          });
+      });
+
+  }
 }
