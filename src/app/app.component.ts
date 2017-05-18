@@ -3,7 +3,6 @@ import { FormControl } from '@angular/forms';
 import { SpotifyService } from "./spotify.service";
 import { Album } from "./spotify.model";
 
-
 @Component({
   selector: 'ap-app',
   templateUrl: './app.component.html',

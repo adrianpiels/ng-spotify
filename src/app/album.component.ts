@@ -35,6 +35,7 @@ export class AlbumComponent implements OnInit {
 
     public preview(): void {
 
+        // Get the first track that has a preview url
         let track = this.tracks.find((track) => {
             return track.preview_url != null;
         })
