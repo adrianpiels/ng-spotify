@@ -1,8 +1,8 @@
 <div class="card" style="width: 20rem;">
   <img class="card-img-top" src={{album.images[1].url}} alt="Card image cap">
   <div class="card-block">
-    <h4 class="card-title">{{album.name}}</h4>
-    <p class="card-text">{{album.name}}</p>
+    <h5 class="card-title">{{album.name}}</h5>
+    <p class="card-text">Number of tracks: {{tracks !== undefined ? tracks.length : 0}}</p>
     <button type="button" class="btn btn-success" (click)="preview(album.id)" *ngIf="!playing" [disabled]="playable != true">Preview</button>
     <button type="button" class="btn btn-danger" (click)="preview(album.id)" *ngIf="playing">Stop</button>
   </div>
