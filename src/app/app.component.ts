@@ -19,8 +19,9 @@ export class AppComponent {
       .distinctUntilChanged()
       .subscribe(v => {
         this.spotiyService.searchAlbums(v)
-          .subscribe(a => {
-            this.albums = a;
+          .take(6)
+          .subscribe(albums => {
+            this.albums = albums;
           });
       });
 

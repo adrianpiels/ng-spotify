@@ -1,9 +1,12 @@
-export interface SpotifyResponse {
-    albums: {
-        items: Album[];
+export interface Album {
+    id: string,
+    name: string,
+    images: {
+        url: string;
     }
 }
 
-export interface Album {
-    name: string;
+export interface Track {
+    name: string,
+    preview_url: string
 }

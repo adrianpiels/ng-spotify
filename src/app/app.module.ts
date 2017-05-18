@@ -5,10 +5,11 @@ import { HttpModule } from '@angular/http';
 import "rxjs/Rx";
 
 import { AppComponent } from './app.component';
+import { AlbumComponent } from "./album.component";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, AlbumComponent
   ],
   imports: [
     BrowserModule,
